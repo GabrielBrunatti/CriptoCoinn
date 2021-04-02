@@ -1,4 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page import="java.io.*,java.util.*, javax.servlet.*" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
+<%@ page import="pacote.Moedas" %>
+
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -42,6 +45,31 @@
 		</div>
 		<br>
 	</div>
+<<<<<<< Updated upstream
+=======
+
+<%
+		String resposta = (String) request.getAttribute("resposta");
+		if(resposta == null)
+			resposta = "";
+		
+		String lista = "";
+		HttpSession sessao = request.getSession(false);
+		if(sessao != null) {
+			List<String> listaRespostas = (List<String>) sessao.getAttribute("listaPreco");
+			if(listaRespostas != null) {
+				for(String resp: listaRespostas){
+					lista += String.format("<li> %s </li>", resp);
+				}
+			}
+		}
+	%>
+	
+	<div>
+		<h6><%=resposta %>123</h6>
+		
+	</div>
+>>>>>>> Stashed changes
 
 <style>
 
