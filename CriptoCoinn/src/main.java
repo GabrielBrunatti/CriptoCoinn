@@ -35,7 +35,6 @@ public class main extends HttpServlet {
 		Moedas btc = new Moedas();
 		btc.setName("Bitcoin");
 		btc.setPreco(58.800);
-		btc.setId("btc");
 		String str="1099821583466";
 		BigInteger bigIntegerStr=new BigInteger(str);
 		btc.setMarket_cap((bigIntegerStr));

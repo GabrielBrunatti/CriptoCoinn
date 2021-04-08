@@ -1,6 +1,7 @@
 package useCase;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import pacote.Moedas;
-
-
-public class useCasePreco {
+class useCasePreco {
 
 	private HttpServletRequest request;
 	private HttpServletResponse response;
@@ -34,10 +33,9 @@ public class useCasePreco {
 			String resposta = String.format("Preco:$%", 
 			btc.getPreco());
 
-			
 			request.setAttribute("resposta", resposta);  
 //			presenter.println(resposta);
-			this.guardaNaSessao(resposta);
+			
 		} catch (NullPointerException e) {
 			request.setAttribute("resposta", "API ERRO EM."); 
 //			presenter.println("Um dos valores não foi informado.");
@@ -47,18 +45,6 @@ public class useCasePreco {
 		}
 		rd.forward(request, response);
 		
-	}
-	private void guardaNaSessao(String resposta) {
-		HttpSession sessao = request.getSession(false);
-		if(sessao != null) {
-			List<String> listaPreco = (List<String>) sessao.getAttribute("listaPreco");
-			if(listaPreco == null) {
-				listaPreco = new ArrayList<String>();
-			}
-			
-			listaPreco.add(resposta);
-			sessao.setAttribute("listaPreco", listaPreco);
-		}
 	}
 	
 }

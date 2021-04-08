@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,13 @@ public class PaginaAda extends HttpServlet {
     	byte[] imageData = carregarImagem(imageId);
     	response.setContentType("image/jpeg");
     	response.getOutputStream().write(imageData);
+
+	}
+	
+	protected void chamado(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		 
+		response.setContentType("useCasePreco.java");
 
 	}
 

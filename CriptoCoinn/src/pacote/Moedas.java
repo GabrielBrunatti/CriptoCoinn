@@ -4,19 +4,12 @@ import java.math.BigInteger;
 
 public class Moedas {
 
-	private String id;
 	private String name;
 	private String symbol; 
 	private BigInteger volume;
 	private Double Preco;
 	private BigInteger market_cap;
 	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}

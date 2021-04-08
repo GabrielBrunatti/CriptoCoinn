@@ -43,33 +43,23 @@
 		<div class="foto">
 			<img class="logo" src="./PaginaInicial"/>
 		</div>
+		
+		<form action="front.jsp" method="get">
+	Nome: <input type="text" name="resposta"/>
+	<input type="submit" value="Enviar"><br/>
+</form>
+		
 		<br>
 	</div>
-<<<<<<< Updated upstream
-=======
+
 
 <%
-		String resposta = (String) request.getAttribute("resposta");
-		if(resposta == null)
-			resposta = "";
-		
-		String lista = "";
-		HttpSession sessao = request.getSession(false);
-		if(sessao != null) {
-			List<String> listaRespostas = (List<String>) sessao.getAttribute("listaPreco");
-			if(listaRespostas != null) {
-				for(String resp: listaRespostas){
-					lista += String.format("<li> %s </li>", resp);
-				}
-			}
-		}
-	%>
+String resposta = request.getParameter("resposta");
+out.print("Bem vindo, "+resposta);
+%>
+<h6> <%=resposta %> </h6>
 	
-	<div>
-		<h6><%=resposta %>123</h6>
-		
-	</div>
->>>>>>> Stashed changes
+
 
 <style>
 
